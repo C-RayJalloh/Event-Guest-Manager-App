@@ -1,0 +1,150 @@
+body{
+    background-color: #F9F8F3;
+}
+
+.app{
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.header{
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400px;
+    color: #FDB137;
+}
+
+.header p{
+   font-weight: 300;
+}
+
+.sortActions {
+    display: flex;
+    justify-content: end;
+}
+
+.sortActions select {
+    padding: 10px;
+    font-size: 15px;
+    border: 2px solid #feeaa5;
+    border-radius: 10px;
+    background-color: #feeaa5;
+    margin: 5px;
+}
+
+.sortActions select:hover{
+    background-color: #feeaa5;
+  
+}
+.sortActions button {
+    padding: 10px;
+    font-size: 15px;
+    border: 2px solid #feeaa5;
+    border-radius: 10px;
+    background-color: #feeaa5;
+    margin: 5px;
+}
+
+.sortActions button:hover{
+    background-color: #FDB137;
+}
+  
+
+
+.guestTable {
+    padding: 20px;
+    border: 2px solid #FDB137;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: #F9F8F3; /* Add a background color */
+    box-shadow: 3px 4px 4px #FDB137; /* Add a subtle shadow for depth */
+ }
+ 
+ .guestTable table {
+    width: 100%; /* Ensure the table takes full width */
+    border-collapse: collapse; /* Remove spacing between cells */
+ }
+
+ 
+.guestTable th, .guestTable td {
+    padding: 12px 15px; /* Add padding to cells for better spacing */
+    text-align: center; /* Align text to the left */
+}
+
+.guestTable th {
+    background-color: #FDB137; /* Add background color to header */
+    color: black; /* White text color for contrast */
+    font-weight: 500; /* Make header text bold */
+    text-transform: uppercase; /* Convert header text to uppercase */
+}
+
+.guestTable tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternate row color for better readability */
+}
+
+.guestTable tr:hover {
+    background-color: #feeaa5; /* Highlight row on hover */
+}
+
+.guestTable td {
+    border-bottom: 1px solid #feeaa5; /* Keep the bottom border */
+}
+
+.guestTable td:last-child {
+    text-align: center; /* Center align the remove button */
+}
+
+.guestTable button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+
+.guestTable input[type="checkbox"] {
+    transform: scale(1.2); /* Make the checkbox slightly larger */
+    cursor: pointer;
+}
+
+.add-form {
+    margin-top: 20px;
+    border: 2px solid #FDB137;
+    box-shadow: 3px 4px 4px #FDB137;
+    border-radius: 10px;
+}
+
+.add-form label {
+    margin: 5px;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.add-form input{
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid #FDB137;
+    border-radius: 15px;
+}
+.add-form button{
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid #FDB137;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #feeaa5;
+}
+
+.add-form button:hover{
+    background-color: #FDB137;
+}
+
+.stats{
+    margin-top: 25px;
+    background-color: #feeaa5;
+}
