@@ -21,7 +21,7 @@ const initialGuests = [
     name: "Satu Jay",
     phone: "123-456-4628",
     email: "satujay@gmail.com",
-    attended: true,
+    attended: false,
   },
 ];
 
@@ -35,19 +35,24 @@ export default function App() {
   function handleUpdateGuest(id) {
     setGuests((guests) =>
       guests.map((guest) =>
-        guest.id === id ?
-     { ...guest, attended: !guest.attended } : guest
+        guest.id === id ? { ...guest, attended: !guest.attended } : guest
       )
     );
   }
 
-
+  function handleDeleteGuest(id) {
+    setGuests((guests) => guests.filter((guest) => guest.id !== id));
+  }
 
   return (
     <div className="app">
       <Heading />
       <SortOperations addGuest={handleAddGuest} />
-      <GuestList guest={guests} updateGuest={handleUpdateGuest} />
+      <GuestList
+        guest={guests}
+        updateGuest={handleUpdateGuest}
+        deleteGuest={handleDeleteGuest}
+      />
       {/* <GuestForm  addGuest={handleAddGuest}/> */}
       <Stats />
     </div>
@@ -77,7 +82,7 @@ function SortOperations({ addGuest }) {
   );
 }
 
-function GuestList({ guest, updateGuest }) {
+function GuestList({ guest, updateGuest, deleteGuest }) {
   return (
     <div className="guestTable">
       <table>
@@ -92,7 +97,9 @@ function GuestList({ guest, updateGuest }) {
         </thead>
         <tbody>
           {guest.map((guest) => (
-            <tr key={guest.id}>
+            <tr key={guest.id}   style={
+              guest.attended ? {textDecoration: 'line-through'} : {}
+              }>
               <td>{guest.name}</td>
               <td>{guest.phone}</td>
               <td>{guest.email}</td>
@@ -101,13 +108,10 @@ function GuestList({ guest, updateGuest }) {
                   type="checkbox"
                   value={guest.attended}
                   onChange={() => updateGuest(guest.id)}
-                  style={
-                    guest.attended ? { textDecoration: "line-through" } : {}
-                  }
                 />
               </td>
               <td>
-                <button>❌</button>
+                <button onClick={() => deleteGuest(guest.id)}>❌</button>
               </td>
             </tr>
           ))}

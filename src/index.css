@@ -108,7 +108,8 @@ body{
 .guestTable input[type="checkbox"] {
     transform: scale(1.2); /* Make the checkbox slightly larger */
     cursor: pointer;
-}
+} 
+
 
 .add-form {
     margin-top: 20px;
