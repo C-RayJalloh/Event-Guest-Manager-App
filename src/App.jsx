@@ -210,7 +210,7 @@ function Stats({guests}) {
       {notAttendedPercentage === 100 ? (
         <strong>Sadly...No one attend the event!</strong>
       ): (
-        <em>You have {numGuest} guest on the list and {NotAttendedGuest} people did not attend, total of {notAttendedPercentage}% absent ☹️ </em>
+      <em>You have {numGuest} guest on the list and {NotAttendedGuest} {NotAttendedGuest === 1 ? 'person' : 'people'} did not attend, total of {notAttendedPercentage}% absent ☹️ </em>
       )}
     </div>
   );
