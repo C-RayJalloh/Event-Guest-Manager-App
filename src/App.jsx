@@ -54,7 +54,7 @@ export default function App() {
         deleteGuest={handleDeleteGuest}
       />
       {/* <GuestForm  addGuest={handleAddGuest}/> */}
-      <Stats />
+      <Stats guests={guests}/>
     </div>
   );
 }
@@ -193,10 +193,25 @@ function GuestForm({ addGuest }) {
   );
 }
 
-function Stats() {
+function Stats({guests}) {
+
+  if(!guests.length) return (
+    <div className="stats">
+      <em>No guests found, add guest</em>
+    </div>
+  );
+
+  const numGuest = guests.length;
+  const NotAttendedGuest = guests.filter((guest) => guest.attended).length;
+  const notAttendedPercentage = Math.round((NotAttendedGuest / numGuest) * 100);
+
   return (
     <div className="stats">
-      <em>You have added 0 guest on the list </em>
+      {notAttendedPercentage === 100 ? (
+        <strong>Sadly...No one attend the event!</strong>
+      ): (
+        <em>You have {numGuest} guest on the list and {NotAttendedGuest} people did not attend, total of {notAttendedPercentage}% absent ☹️ </em>
+      )}
     </div>
   );
 }

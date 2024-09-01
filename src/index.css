@@ -148,4 +148,7 @@ body{
 .stats{
     margin-top: 25px;
     background-color: #feeaa5;
+    padding: 20px;
+    font-weight: 400;
+    font-size: 25px;
 }
